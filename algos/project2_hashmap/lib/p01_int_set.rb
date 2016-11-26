@@ -96,13 +96,10 @@ class ResizingIntSet
 
   def resize!
     old_store = @store
-    new_capacity = @store.size * 2
-    @store = Array.new(new_capacity) { [] }
+    @store = Array.new(@store.length * 2) { [] }
     @count = 0
     old_store.each do |bucket|
-      p "resizing with bucket #{bucket}"
-      bucket.each { |num| @store.insert(num) }
+      bucket.each { |num| self.insert(num) }
     end
-    p @store
   end
 end
