@@ -29,21 +29,6 @@ class QuickSort
     array
   end
 
-  # def self.sort2!(array, start = 0, length = array.length, &prc)
-  #   prc ||= proc { |el1, el2| el1 <=> el2 }
-  #
-  #   return array if length < 2
-  #
-  #   pivot_idx = partition(array, start, length, &prc)
-  #
-  #   left_length = pivot_idx - start
-  #   right_length = length - (left_length + 1)
-  #   sort2!(array, start, left_length, &prc)
-  #   sort2!(array, pivot_idx + 1, right_length, &prc)
-  #
-  #   array
-  # end
-
   def self.partition(array, start, length, &prc)
     prc ||= proc { |a, b| a <=> b }
     pivot = array[start]
