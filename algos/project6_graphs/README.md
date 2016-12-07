@@ -1,6 +1,6 @@
-##Graphs: Topological Sort
+## Graphs: Topological Sort
 
-###Vertex and Edge
+### Vertex and Edge
 
 Start off by writing the Vertex and Edge Classes. The Vertex Class should take in
 an value and store in_edges and out_edges. The Edge Class should take in a from_vertex,
@@ -11,7 +11,7 @@ move on to topological sort.
 
 What you've created is an Adjacency List representation of a Graph.
 
-###Kahn's Algorithm
+### Kahn's Algorithm
 
 Let's first write topological sort using Kahn's Algorithm.
 
@@ -31,7 +31,7 @@ The idea of Kahn’s algorithm is to repeatedly remove nodes that have zero in-d
 
 What is the time complexity of this algorithm? Make sure to analyze time complexity based on the set of vertices and edges.
 
-###Tarjan's Algorithm
+### Tarjan's Algorithm
 
 Next, implement topological sort using Tarjan's Algorithm.
 
@@ -39,4 +39,4 @@ An alternative algorithm for topological sorting is based on depth-first search.
 
 Each node n gets prepended to the output list L only after considering all other nodes which depend on n (all descendants of n in the graph). Specifically, when the algorithm adds node n, we are guaranteed that all nodes which depend on n are already in the output list L: they were added to L either by the recursive call to visit() which ended before the call to visit n, or by a call to visit() which started even before the call to visit n.
 
-What is the time complexity? 
+What is the time complexity?
