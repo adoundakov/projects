@@ -10,10 +10,6 @@ describe 'TopologicalSort' do
 
   before(:each) do
     vertices.push(v1, v2, v3, v4)
-    Edge.new(v1, v2)
-    Edge.new(v1, v3)
-    Edge.new(v2, v4)
-    Edge.new(v3, v4)
   end
 
   it "sorts the vertices" do
@@ -23,6 +19,10 @@ describe 'TopologicalSort' do
     ]
 
     20.times do
+      Edge.new(v1, v2)
+      Edge.new(v1, v3)
+      Edge.new(v2, v4)
+      Edge.new(v3, v4)
       expect(solutions).to include(topological_sort(vertices.shuffle))
     end
   end
