@@ -25,10 +25,42 @@ require_relative 'graph'
 # end
 
 # Tarian's Algorithm
+# start with list of all 0-in-degree nodes
+# initiate a dfs on each 0 node
+# for each node
+#   visit first node
+#   if first node already visited, go to next out edge
+#   if node has no children, add to sorted array
+#   also add if all children visited
+#   if DFS array is empty, go to next 0-indegree node
 
-# def topological_sort(vertices)
-#
-# end
+def topological_sort(vertices)
+  sorted = []
+  visited = Set.new
+  zero_nodes = vertices.select { |n| n.in_edges.empty? }
+
+  until zero_nodes.empty?
+    curr_node = zero_nodes.pop
+    dfs(curr_node, visited, sorted)
+  end
+
+  sorted
+end
+
+def dfs(node, visited, sorted)
+  visited.add(node)
+
+  node.out_edges.each do |edge|
+    child = edge.to_vertex
+    dfs(child, visited, sorted) unless visited.include?(child)
+  end
+
+  sorted.unshift(node)
+end
+
+def all_children_visited?(children, visited)
+  children.all? { |c| visited.include?(c) }
+end
 
 # Graph from Specs
 #
@@ -38,14 +70,15 @@ require_relative 'graph'
 # v       v
 # V3 ---> V4
 
-if __FILE__ == $PROGRAM_NAME
-  v1 = Vertex.new("Wash Markov")
-  v2 = Vertex.new("Feed Markov")
-  v3 = Vertex.new("Dry Markov")
-  v4 = Vertex.new("Brush Markov")
-  Edge.new(v1, v2)
-  Edge.new(v1, v3)
-  Edge.new(v2, v4)
-  Edge.new(v3, v4)
-  topological_sort([v1, v2, v3, v4])
-end
+# Test code for sort
+# if __FILE__ == $PROGRAM_NAME
+#   v1 = Vertex.new("Wash Markov")
+#   v2 = Vertex.new("Feed Markov")
+#   v3 = Vertex.new("Dry Markov")
+#   v4 = Vertex.new("Brush Markov")
+#   Edge.new(v1, v2)
+#   Edge.new(v1, v3)
+#   Edge.new(v2, v4)
+#   Edge.new(v3, v4)
+#   topological_sort([v1, v2, v3, v4])
+# end
