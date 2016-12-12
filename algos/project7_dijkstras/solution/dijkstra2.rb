@@ -5,7 +5,7 @@ require_relative 'priority_map'
 def dijkstra2(source)
   locked_in_paths = {}
   possible_paths = PriorityMap.new do |data1, data2|
-    # sorted in the priority queue by cost 
+    # sorted in the priority queue by cost
     data1[:cost] <=> data2[:cost]
   end
   possible_paths[source] = { cost: 0, last_edge: nil }
@@ -17,7 +17,7 @@ def dijkstra2(source)
     # removing the top priority vertex from our priority map
     vertex, data = possible_paths.extract
     locked_in_paths[vertex] = data
-    debugger
+    # debugger
 
     update_possible_paths(vertex, locked_in_paths, possible_paths)
   end
