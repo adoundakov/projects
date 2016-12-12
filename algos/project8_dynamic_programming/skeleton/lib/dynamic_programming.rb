@@ -11,6 +11,12 @@ class DPProblems
   # Takes in a positive integer n and returns the nth Fibonacci number
   # Should run in O(n) time
   def fibonacci(n)
+    fibb = []
+    fibb[0], fibb[1], fibb[2] = 0, 1, 1
+    (3).upto(n) do |i|
+      fibb[i] = fibb[i - 2] + fibb[i - 1]
+    end
+    fibb[n]
   end
 
   # Make Change: write a function that takes in an amount and a set of coins.  Return the minimum number of coins
