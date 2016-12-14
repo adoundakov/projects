@@ -6,6 +6,7 @@
 class DPProblems
   def initialize
     # Use this to create any instance variables you may need
+    @best_change = nil
   end
 
   # Takes in a positive integer n and returns the nth Fibonacci number
@@ -24,6 +25,9 @@ class DPProblems
   # If it's not possible to make change for a given amount, return nil.  You may assume that the coin array is sorted
   # and in ascending order.
   def make_change(amt, coins, coin_cache = {0 => 0})
+    # take amount, subtract largest coin you can add to coin cache
+    # if amount = 0, check soln length
+    # if amoun != 0, call make_change with same coins array, but new amount
   end
 
   # Knapsack Problem: write a function that takes in an array of weights, an array of values, and a weight capacity
