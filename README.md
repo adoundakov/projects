@@ -1,2 +1,3 @@
 # projects
-Collection of a/A projects
+
+A collection of projecs from a/A or challenges
