@@ -1,0 +1,50 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-container {
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('https://res.cloudinary.com/adoundakov/image/upload/c_scale,w_2668/v1485554257/images/omgBarcode/fb6vphbto7i-brooke-lark.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  padding-top: 100px;
+}
+
+.item-form {
+  width: 30%;
+  padding: 56px 0 56px 0;
+  margin: 0 auto;
+  background: white;
+  border-radius: 4px;
+  font-family: 'Nunito';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #444;
+}
+
+.item-form label {
+  width: 65%;
+}
+
+.item-form input {
+  width: 100%;
+}
+
+#submit {
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-family: inherit;
+  width: 65%;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 14px;
+  font-family: 'Lobster';
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
