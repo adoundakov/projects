@@ -7,7 +7,7 @@ class ItemsController < ApplicationController # :nodoc:
     @item = Item.new(item_params)
     if @item.save
       flash[:success] = ['Item Saved Successfully']
-      redirect_to :root
+      redirect_to new_item_url
     else
       flash.now[:errors] = @item.errors.full_messages
       render :new, status: 422
