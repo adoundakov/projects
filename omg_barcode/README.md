@@ -4,7 +4,6 @@ This project was built as one part coding challenge, one part learning React Nat
 
 ## Problem
 
-
 Create a bar code scanning application in react native. When
 the app starts, it should start a camera. The user can then scan a upc
 code of a product using the camera. If the upc code matches with one
@@ -28,7 +27,7 @@ codes for any products you have at home to test it out.
 {"product_name":"Luke's cheddar chips","upc":"84114112729"}
 ]
 ```
-
-> For the purposes of this project, UPC codes are assumed to be between 10000000000 and 99999999999
+**Constraints:**
+  - UPC Codes are 12 Digits Long
 
 ## Implementation

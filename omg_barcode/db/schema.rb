@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170127061425) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name",       null: false
-    t.integer  "upc",        null: false
+    t.string   "upc",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_items_on_name", using: :btree

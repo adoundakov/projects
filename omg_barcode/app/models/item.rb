@@ -11,6 +11,5 @@
 
 class Item < ApplicationRecord
   validates :name, :upc, presence: true, uniqueness: true
-  validates :upc, numericality: {greater_than_or_equal_to: 10000000000,
-                                 less_than_or_equal_to: 99999999999}
+  validates :upc, length: { is: 12 }
 end
