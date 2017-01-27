@@ -1,16 +1,16 @@
-<div class="form-container">
   <h1 class="app-header">Add a New Item</h1>
 
+<div class="form-container">
   <form class="item-form" action="/items" method="post">
     <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
-    <label>Item Name: <br>
+    <label>Item Name<br>
     <input type="text" name="item[name]" value="">
     </label>
     <br>
-    <label>UPC #: <br>
+    <label>UPC<br>
     <input type="text" name="item[upc]" value="">
     </label>
     <br>
-    <button type="submit" name="button">Create</button>
+    <button id='submit' class='ui-button' type="submit" name="button">Create</button>
   </form>
 </div>
