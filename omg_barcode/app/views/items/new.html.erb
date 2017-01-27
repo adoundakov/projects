@@ -1,8 +1,15 @@
 <div class="form-container">
   <h1>Add a New Item</h1>
   <form class="" action="/items" method="post">
-    <input type="text" name="name" value="">
-    <input type="text" name="upc" value="">
+    <input type="hidden" name="authenticity_token" value=" <%= form_authenticity_token %>">
+    <label>Item Name: <br>
+    <input type="text" name="item[name]" value="">
+    </label>
+    <br>
+    <label>UPC #: <br>
+    <input type="text" name="item[upc]" value="">
+    </label>
+    <br>
     <button type="submit" name="button">Create</button>
   </form>
 </div>
