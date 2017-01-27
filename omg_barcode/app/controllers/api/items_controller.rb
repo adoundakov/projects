@@ -3,7 +3,7 @@ class Api::ItemsController < ApplicationController
     @items = Item.all
   end
 
-  def new
+  def create
     @item = Item.new(item_params)
     if @item.save
       success = ['Item Saved Successfully']
