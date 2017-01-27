@@ -4,17 +4,19 @@
     <title>OmgBarcode</title>
     <%= csrf_meta_tags %>
 
+    <link rel="shortcut icon" href="./app/assets/images/favicon.png">
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Lobster" rel="stylesheet">
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <ul>
       <% if flash[:success] %>
-        <li><%= flash[:success].first %></li>
+        <li class='success'><%= flash[:success].first %></li>
       <% elsif flash[:errors] %>
         <% flash[:errors].each do |error| %>
-          <li><%= error %></li>
+          <li class='error'><%= error %></li>
         <% end %>
       <% end %>
     </ul>

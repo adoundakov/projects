@@ -1,4 +1,10 @@
-<h1>Welcome to the Barcode Scanner!</h1>
-<p>For more info, please visit <a href="https://github.com/adoundakov/projects/tree/master/omg_barcode">the repo</a>.</p>
-
-<%= link_to 'Create an Item', new_item_url %>
+<h1 class='app-header'>Welcome to the Barcode Scanner!</h1>
+<div class="app-splash">
+  <div class="splash-content">
+    <p>This project was created by Alexander Doundakov as a coding challenge. Please explore by using the links below!</p>
+    <div>
+      <%= link_to 'Create an Item', new_item_url, { class: 'ui-button' } %>
+      <a class="ui-button clear-button" href="https://github.com/adoundakov/projects/tree/master/omg_barcode">GitHub</a>
+    </div>
+  </div>
+</div>

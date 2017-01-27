@@ -1,3 +1,70 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.app-header {
+  font-family: 'Lobster';
+  font-size: 28px;
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  line-height: 2.2em;
+}
+
+.app-splash {
+  height: 500px;
+  background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('https://res.cloudinary.com/adoundakov/image/upload/c_scale,w_2560/v1485554255/images/omgBarcode/rmcsbd4o_qo-peter-feghali.jpg');
+  background-size: cover;
+  display: flex;
+}
+
+.splash-content {
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  font-family: 'Arimo';
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;
+}
+
+.splash-content > div {
+  width: auto;
+  margin: 0 auto;
+}
+
+.ui-button {
+  width: 160px;
+  text-align: center;
+  color: inherit;
+  float: left;
+  background: #5DB745;
+  height: 48px;
+  line-height: 2.6em;
+  padding: 0 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 100ms linear;
+  box-sizing: border-box;
+}
+
+.ui-button:hover {
+  background: #4A9137;
+}
+
+.clear-button {
+  background: transparent;
+  margin-left: 7px;
+  border: 1px solid #5DB745;
+  transition: all 100ms linear;
+  transition-property: border-color, background;
+}
+
+.clear-button:hover {
+  border-color: #5DB745;
+  background: #5DB745;
+}
