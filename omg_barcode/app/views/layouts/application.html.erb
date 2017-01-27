@@ -9,6 +9,15 @@
   </head>
 
   <body>
+    <ul>
+      <% if flash[:success] %>
+        <li><%= flash[:success].first %></li>
+      <% elsif flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>

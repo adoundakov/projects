@@ -1,11 +1,16 @@
-class ItemsController < ApplicationController
+class ItemsController < ApplicationController # :nodoc:
   def new
+    # render new item form
   end
 
   def create
     @item = Item.new(item_params)
     if @item.save
+      flash[:success] = ['Item Saved Successfully']
+      redirect_to :root
     else
+      flash.now[:errors] = @item.errors.full_messages
+      render :new, status: 422
     end
   end
 
