@@ -1,5 +1,5 @@
 class BinaryMinHeap # :nodoc:
-  def self.swap(array, i, j)
+  def self.swap!(array, i, j)
     array[i], array[j] = array[j], array[i]
   end
 
@@ -15,11 +15,11 @@ class BinaryMinHeap # :nodoc:
 
   def self.heapify_down(array, parent_idx, len = array.length, &prc)
     prc ||= proc { |a, b| a <=> b }
-    child_indices = BinaryMinHeap.child_indices(len, parent_idx)
-    child_indices.sort! { |a, b| prc.call(array[a], array[b]) }
-    child_indices.each do |child|
+    BinaryMinHeap.child_indices(len, parent_idx)
+                 .sort! { |a, b| prc.call(array[a], array[b]) }
+                 .each do |child|
       if prc.call(array[parent_idx], array[child]) == 1
-        BinaryMinHeap.swap(array, child, parent_idx)
+        BinaryMinHeap.swap!(array, child, parent_idx)
         BinaryMinHeap.heapify_down(array, child, len, &prc)
       end
     end
@@ -32,7 +32,7 @@ class BinaryMinHeap # :nodoc:
     return array if child_idx.zero?
     parent_idx = BinaryMinHeap.parent_index(child_idx)
     if prc.call(array[parent_idx], array[child_idx]) == 1
-      BinaryMinHeap.swap(array, child_idx, parent_idx)
+      BinaryMinHeap.swap!(array, child_idx, parent_idx)
       BinaryMinHeap.heapify_up(array, parent_idx, len, &prc)
     end
 
@@ -40,18 +40,28 @@ class BinaryMinHeap # :nodoc:
   end
 
   def initialize(&prc)
+    self.prc = prc
+    self.store = []
   end
 
   def count
+    store.size
   end
 
   def extract
+    BinaryMinHeap.swap!(store, 0, store.length - 1)
+    val = store.pop
+    BinaryMinHeap.heapify_down(store, 0, store.length, &prc)
+    val
   end
 
   def peek
+    store[0]
   end
 
   def push(val)
+    store << val
+    BinaryMinHeap.heapify_up(store, store.length - 1, store.length, &prc)
   end
 
   protected
